@@ -5,6 +5,7 @@ f_dx = lambda x, y: 2*x - y - 2
 f_dy = lambda x, y: -x + 2*y + 1
 gradient = lambda x, y: [f_dx(x, y), f_dy(x, y)]
 
+
 epsilon = 0.05
 lmd = 0.25
 x0, y0 = 0, 0
@@ -30,7 +31,7 @@ def rapid_descent(x_0, y_0):
     derivative = sp.diff(func, h)
     solution = sp.solve(derivative, h)
     h_result = solution[0]
-    
+
     x1, y1 = x - h_result*dx, y - h_result*dy
     
     if (f_dx(x1, y1)**2 + f_dy(x1, y1)**2)**0.5 <= epsilon:
